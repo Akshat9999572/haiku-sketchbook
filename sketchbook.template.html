@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f3f0e8">
 <title>Haiku Sketchbook — sketches & verses</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='5' y='5' width='30' height='30' rx='2' fill='%23ac493b'/%3E%3Cpath d='M13 12v16m-4-8h12m4-8v16m-3-12h8m-8 8h8' stroke='%23f8f3e7' stroke-width='2'/%3E%3C/svg%3E">
@@ -24,9 +24,31 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;bac
 /* After the final leaf turns, center the closed book on its left half. */
 .book.closed-end{translate:25% 0}.closed-end .foundation{left:0;right:50%;border-radius:6px 1px 1px 6px}.closed-end .hit.next{visibility:hidden}
 .back-cover-copy{position:absolute;top:28%;left:10%;width:80%;text-align:center;color:#41473e}.back-cover-name{font:clamp(22px,3.5cqi,36px)/1.25 Notebook,'Segoe Print',cursive;margin:0 0 22px;transform:rotate(-1deg)}.back-cover-bio{font:clamp(17px,2.6cqi,27px)/1.6 Notebook,'Segoe Print',cursive;margin:0}.back-cover-copy .seal{margin:26px auto 0;display:block}.mobile-back-cover{position:relative;width:82%;margin:44px auto 0;aspect-ratio:2/3;box-shadow:0 12px 30px #4c452522;container-type:inline-size}.mobile-back-cover .back-cover-name{font-size:clamp(23px,9cqi,34px)}.mobile-back-cover .back-cover-bio{font-size:clamp(19px,7cqi,26px)}
-@media(max-width:700px){.masthead{padding:22px 6vw;font-size:8px;letter-spacing:1.4px}.masthead>span{display:none}.scene,.controls,.dots,.hint{display:none}.mobile-reading{display:block;padding:24px 6vw}.mobile-title{text-align:center;font-size:36px;font-weight:400;letter-spacing:-1px;margin:0 0 28px}.mobile-cover{width:82%;display:block;margin:0 auto 44px;box-shadow:0 12px 30px #4c452522;border-radius:3px}.mobile-spread{background:var(--paper);margin:0 0 36px;box-shadow:0 5px 17px #4c452515;scroll-margin-top:20px}.mobile-spread img{width:100%;display:block;mix-blend-mode:multiply}.mobile-spread .verse{min-height:300px;padding:25px 12% 48px}.mobile-spread .poem{font-size:30px}.mobile-spread .eyebrow{margin-bottom:20px}.mobile-spread .folio{bottom:20px}.footer{font-size:8px;line-height:1.8;gap:24px}}
+[hidden]{display:none!important}
+@media(max-width:700px),(max-height:500px){
+ .masthead{padding:14px 5vw;font-size:9px;letter-spacing:1.4px}.masthead>span{display:none}
+ .scene{display:none}.mobile-reading{display:block;padding:10px 5vw 18px;min-height:calc(100svh - 184px);touch-action:pan-y;max-width:620px;margin:auto}
+ .mobile-title{text-align:center;font-size:26px;font-weight:400;letter-spacing:-1px;margin:0 0 16px}
+ .mobile-cover,.mobile-back-cover{width:min(82%,calc(57svh * .6667));margin:0 auto;box-shadow:0 10px 24px #4c452522;border-radius:3px}
+ .mobile-cover{display:block;cursor:pointer}.mobile-back-cover{cursor:pointer}
+ .mobile-spread{position:relative;background:var(--paper);margin:0;box-shadow:0 6px 20px #4c452515;border-radius:4px;overflow:hidden}
+ .mobile-spread>img{width:100%;height:clamp(170px,31svh,300px);object-fit:contain;display:block;mix-blend-mode:multiply}
+ .mobile-spread .verse{padding:18px 9% 28px;min-height:0;height:auto}.mobile-spread .poem{font-size:clamp(24px,7vw,30px);line-height:1.5}
+ .mobile-spread .eyebrow{margin-bottom:12px;font-size:9px}.mobile-spread .seal{margin-top:15px;width:29px;height:31px}.mobile-spread .annotation{margin-top:10px}.mobile-spread .folio{bottom:15px}
+ .reader-controls{position:sticky;bottom:0;background:#f3f0e8f5;padding:8px 0 max(6px,env(safe-area-inset-bottom));border-top:1px solid #d7d3c655;z-index:250}
+ .controls{padding:0 16px;gap:24px}.arrow{width:48px;height:48px;font-size:22px;touch-action:manipulation}.counter{font-size:11px;min-width:106px}
+ .dots{padding-top:2px;gap:0}.dot{width:44px;height:36px;background:transparent!important;border-radius:0;touch-action:manipulation}.dot:before{inset:0}.dot:after{content:"";width:7px;height:7px;position:absolute;left:calc(50% - 3.5px);top:calc(50% - 3.5px);background:#cecec0;border-radius:50%}.dot[aria-current=true]:after{background:var(--red)}
+ .hint{display:none}.footer{font-size:8px;line-height:1.8;gap:24px;margin:18px 5vw}.mobile-back-cover .back-cover-name{font-size:clamp(20px,9cqi,32px)}.mobile-back-cover .back-cover-bio{font-size:clamp(17px,7cqi,25px)}
+ .mobile-page-enter{animation:mobile-page-enter .22s ease-out}
+}
+@keyframes mobile-page-enter{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-height:500px){.mobile-reading{max-width:760px;min-height:0;padding-top:0}.mobile-title{font-size:22px;margin-bottom:10px}.mobile-spread{display:grid;grid-template-columns:45% 55%}.mobile-spread>img{height:240px}.mobile-spread .verse{padding:16px 7%}.mobile-spread .poem{font-size:24px}.mobile-cover,.mobile-back-cover{width:calc(52svh * .6667)}.mobile-back-cover .back-cover-copy{top:20%}.mobile-back-cover .back-cover-name{font-size:15px;margin-bottom:7px}.mobile-back-cover .back-cover-bio{font-size:12px}.mobile-back-cover .seal{margin-top:7px;width:20px;height:22px}}
 @media(prefers-reduced-motion:reduce){.sheet,.book{transition:none!important}}
-@media(max-width:700px){.mobile-spread .poem{font-size:clamp(22px,6.6vw,30px)}}
+@media(prefers-reduced-motion:reduce){.mobile-page-enter{animation:none}}
+@media(min-width:600px) and (max-height:500px){
+ .mobile-spread>img{height:210px}.mobile-spread .verse{padding:10px 7%}.mobile-spread .poem{font-size:22px}.mobile-spread .eyebrow{margin-bottom:8px}.mobile-spread .seal{width:24px;height:26px;margin-top:9px}.mobile-spread .annotation{font-size:14px;margin-top:6px}
+ .reader-controls{display:flex;justify-content:center;align-items:center;gap:24px}.controls{gap:18px}.dots{padding-top:0}
+}
 </style>
 </head>
 <body>
@@ -36,11 +58,13 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;bac
 <h1 class="back-title">Haiku Sketchbook</h1>
 <div class="book-wrap"><div class="book closed" id="book"><div class="foundation"></div><button class="hit prev" aria-label="Previous spread" tabindex="-1"></button><button class="hit next" aria-label="Next spread" tabindex="-1"></button></div></div>
 </section>
+<section class="mobile-reading" id="mobile" aria-label="Haiku collection"></section>
+<div class="reader-controls">
 <nav class="controls" aria-label="Turn pages"><button class="arrow" id="prev" aria-label="Previous spread">←</button><span class="counter" id="counter">COVER</span><button class="arrow" id="next" aria-label="Next spread">→</button></nav>
 <nav class="dots" id="dots" aria-label="Choose a spread"></nav>
 <p class="hint">Click a page to wander · or use the arrow keys</p>
+</div>
 <div class="sr-only" id="status" aria-live="polite" aria-atomic="true"></div>
-<section class="mobile-reading" id="mobile" aria-label="Haiku collection"></section>
 </main>
 <footer class="footer"><span>Sketches & verses</span><span>Pause a little. Notice a little.</span></footer>
 <script>
@@ -74,22 +98,30 @@ for(let i=0;i<=poems.length;i++){
 // Positions: front cover, each haiku, then the closed back cover.
 const lastPosition=poems.length+1;
 const buttons=[];for(let i=0;i<=lastPosition;i++){const b=el('button','dot');b.setAttribute('aria-label',i===0?'View cover':i===lastPosition?'View back cover':`View haiku ${i}: ${poems[i-1].title}`);b.addEventListener('click',()=>navigate(i));dots.append(b);buttons.push(b);}
-mobile.append(el('h1','mobile-title','Haiku Sketchbook'));const mc=el('img','mobile-cover');mc.src=cover;mc.alt='Haiku Sketchbook cover';mobile.append(mc);poems.forEach((p,i)=>{const article=el('article','mobile-spread');article.id=`moment-${i+1}`;const image=el('img');image.src=p.image;image.alt=p.alt;image.loading='lazy';article.append(image);const v=verse(p,i);v.className='mobile-verse';article.append(v);mobile.append(article);});
-const mobileBack=closingCover();mobileBack.className='mobile-back-cover';mobile.append(mobileBack);
+const mobilePages=[];
+mobile.append(el('h1','mobile-title','Haiku Sketchbook'));const mc=el('img','mobile-cover');mc.src=cover;mc.alt=`Haiku Sketchbook cover by ${author}`;mc.draggable=false;mobile.append(mc);mobilePages.push(mc);poems.forEach((p,i)=>{const article=el('article','mobile-spread');article.id=`moment-${i+1}`;const image=el('img');image.src=p.image;image.alt=p.alt;image.loading='lazy';image.draggable=false;article.append(image);const v=verse(p,i);v.className='mobile-verse';article.append(v);mobile.append(article);mobilePages.push(article);});
+const mobileBack=closingCover();mobileBack.className='mobile-back-cover';mobile.append(mobileBack);mobilePages.push(mobileBack);
 const prev=document.getElementById('prev'),next=document.getElementById('next'),counter=document.getElementById('counter'),status=document.getElementById('status');
-const reduced=matchMedia('(prefers-reduced-motion: reduce)'),desktop=matchMedia('(min-width:701px)');let current=0,riffleTimers=[],generation=0,userInteracted=false;
+const reduced=matchMedia('(prefers-reduced-motion: reduce)'),desktop=matchMedia('(min-width:701px) and (min-height:501px)');let current=0,riffleTimers=[],generation=0,userInteracted=false;
 function stopRiffle(){riffleTimers.forEach(clearTimeout);riffleTimers=[];book.classList.remove('riffle');}
 function navigate(target,automatic=false){
  if(!automatic){userInteracted=true;stopRiffle();}const old=current;current=Math.max(0,Math.min(lastPosition,target));generation++;const epoch=generation;
  sheets.forEach((s,i)=>{const turned=i<current;const moving=(i<old)!==turned;s.style.zIndex=moving?String(100+(current>old?i:-i)):String(turned?i+1:sheets.length-i);s.classList.toggle('turned',turned);});
  book.classList.toggle('closed',current===0);book.classList.toggle('closed-end',current===lastPosition);prev.disabled=current===0;next.disabled=current===lastPosition;counter.textContent=current===0?'COVER':current===lastPosition?'BACK COVER':`${String(current).padStart(2,'0')} / ${String(poems.length).padStart(2,'0')}`;buttons.forEach((b,i)=>b.setAttribute('aria-current',String(i===current)));
  const nextLabel=current===poems.length?'Close book':'Next spread';next.setAttribute('aria-label',nextLabel);book.querySelector('.next').setAttribute('aria-label',nextLabel);prev.setAttribute('aria-label',current===lastPosition?'Reopen book':'Previous spread');book.querySelector('.prev').setAttribute('aria-label',current===lastPosition?'Reopen book':'Previous spread');
+ mobilePages.forEach((page,i)=>{page.hidden=i!==current;page.classList.toggle('mobile-page-enter',i===current&&i!==old);});
  status.textContent=current===0?`Cover: Haiku Sketchbook by ${author}`:current===lastPosition?`Book closed. ${author}. ${authorBio}`:`Haiku ${current} of ${poems.length}. ${poems[current-1].lines.join('. ')}`;
  // Hide physical faces from assistive tech; the active poem is announced above.
  setTimeout(()=>{if(epoch!==generation)return;sheets.forEach((s,i)=>s.style.zIndex=String(i<current?i+1:sheets.length-i));},book.classList.contains('riffle')?260:880);
 }
 prev.addEventListener('click',()=>navigate(current-1));next.addEventListener('click',()=>navigate(current+1));book.querySelector('.prev').addEventListener('click',()=>navigate(current-1));book.querySelector('.next').addEventListener('click',()=>navigate(current+1));
-document.addEventListener('keydown',e=>{if(!desktop.matches||e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();navigate(current+(e.key==='ArrowRight'?1:-1));}if(e.key==='Home'){e.preventDefault();navigate(0);}if(e.key==='End'){e.preventDefault();navigate(lastPosition);}});
+document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();navigate(current+(e.key==='ArrowRight'?1:-1));}if(e.key==='Home'){e.preventDefault();navigate(0);}if(e.key==='End'){e.preventDefault();navigate(lastPosition);}});
+// Swipe horizontally to turn; vertical gestures remain normal scrolling.
+let mobileTouch=null,mobileSuppressClick=false;
+mobile.addEventListener('touchstart',e=>{mobileTouch=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null;},{passive:true});
+mobile.addEventListener('touchend',e=>{if(!mobileTouch)return;const dx=e.changedTouches[0].clientX-mobileTouch.x,dy=e.changedTouches[0].clientY-mobileTouch.y;mobileTouch=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.4){navigate(current+(dx<0?1:-1));mobileSuppressClick=true;setTimeout(()=>mobileSuppressClick=false,400);}},{passive:true});
+mobile.addEventListener('touchcancel',()=>{mobileTouch=null;},{passive:true});
+mobile.addEventListener('click',()=>{if(mobileSuppressClick)return;if(current===0)navigate(1);else if(current===lastPosition)navigate(current-1);});
 let touchX=null;book.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;},{passive:true});book.addEventListener('touchend',e=>{if(touchX===null)return;const distance=e.changedTouches[0].clientX-touchX;touchX=null;if(Math.abs(distance)>45){navigate(current+(distance<0?1:-1));suppressClick=true;setTimeout(()=>suppressClick=false,400);}},{passive:true});let suppressClick=false;book.addEventListener('click',e=>{if(suppressClick){e.stopImmediatePropagation();e.preventDefault();}},true);
 // Always begin on the front cover. Only the reader turns the first page.
 function start(){if(!userInteracted)navigate(0,true);}

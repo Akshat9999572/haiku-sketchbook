@@ -1,0 +1,8 @@
+assets/*.png
+assets/fonts/
+public/
+index.html
+sketchbook.template.html
+build.py
+*.md
+output/
