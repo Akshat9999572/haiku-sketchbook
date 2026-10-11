@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "buildCommand": "node scripts/prepare-deploy.cjs",
+  "outputDirectory": "public",
+  "cleanUrls": true
+}
