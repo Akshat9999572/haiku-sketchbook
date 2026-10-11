@@ -8,7 +8,7 @@ Double-click **index.html** to open the complete book. It contains every image a
 
 Run `npx vercel --prod` from this folder while signed in to Vercel. The included configuration prepares `public/index.html` and publishes only the self-contained sketchbook. The artwork sources and editable template remain in the repository. Run `python build.py` after content changes before deploying again.
 
-Desktop: click the left/right page, use the arrow buttons or arrow keys, or choose a dot. The next click after haiku four turns the final leaf and closes the book on its back cover. Click the closed back cover or the previous button to reopen it. Home opens the front cover; End closes on the back cover. Reverse direction during a flip to reverse its motion. The opening riffle runs once per browser session and stops on interaction. Reduced-motion users skip animation.
+Desktop: the book always starts on the front cover. Click the cover or next button to open haiku one. Click the left/right page, use the arrow buttons or arrow keys, or choose a dot. The next click after haiku four turns the final leaf and closes the book on its back cover. Click the closed back cover or the previous button to reopen it. Home opens the front cover; End closes on the back cover. Reverse direction during a flip to reverse its motion. Reduced-motion users skip animation.
 
 Mobile: both covers and four illustrated poems become a vertical reading stack.
 
