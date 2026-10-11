@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f3f0e8">
+<title>Haiku Sketchbook — sketches & verses</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='5' y='5' width='30' height='30' rx='2' fill='%23ac493b'/%3E%3Cpath d='M13 12v16m-4-8h12m4-8v16m-3-12h8m-8 8h8' stroke='%23f8f3e7' stroke-width='2'/%3E%3C/svg%3E">
+<style>
+/* All artwork and the handwriting font are embedded by build.py. */
+@font-face{font-family:Notebook;src:url('__FONT__') format('truetype');font-display:swap}
+:root{--ink:#3e443b;--muted:#858577;--paper:#f8f3e7;--red:#ac493b}
+*{box-sizing:border-box}body{margin:0;background:#f3f0e8;color:var(--ink);font-family:Georgia,serif;min-height:100vh}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset:6px}button:disabled{opacity:.25;cursor:default}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.16' filter='url(%23n)'/%3E%3C/svg%3E")}
+.masthead{display:flex;justify-content:space-between;align-items:center;padding:30px 5vw;font:10px/1.4 system-ui,sans-serif;letter-spacing:2.8px;text-transform:uppercase}.brand{display:flex;align-items:center;gap:12px}.brand-mark{color:var(--red);font-size:24px;letter-spacing:0}.masthead span:last-child{color:var(--muted)}
+.scene{min-height:calc(100svh - 190px);display:grid;place-items:center;position:relative;padding:70px 35px 40px;isolation:isolate}.back-title{position:absolute;top:0;left:0;width:100%;text-align:center;font-size:clamp(65px,10vw,145px);font-weight:400;letter-spacing:-6px;line-height:1;margin:25px 0 0;color:#d6d3c8;filter:blur(2.5px);z-index:-1;user-select:none}.book-wrap{width:min(960px,83vw,calc((100svh - 260px)*1.5));perspective:2600px;position:relative}.book-wrap:after{content:"";position:absolute;bottom:-38px;left:6%;width:88%;height:48px;background:#514936;opacity:.17;filter:blur(23px);border-radius:50%;z-index:-1}.book{position:relative;width:100%;aspect-ratio:1.5;transform-style:preserve-3d;transition:translate .75s ease;translate:0 0}.book.closed{translate:-25% 0}
+.foundation{position:absolute;inset:0;background:#b1b29b;border-radius:3px 9px 9px 3px;box-shadow:0 3px 0 #d7d0bd,0 6px 0 #eae3d2,0 9px 0 #c8c0ac,0 13px 22px #51473526;transform:translateZ(-3px)}.closed .foundation{left:50%}.sheet{position:absolute;top:0;left:50%;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform 850ms cubic-bezier(.26,.65,.2,1);will-change:transform}.sheet.turned{transform:rotateY(-180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);overflow:hidden;border-radius:1px 5px 6px 2px;box-shadow:inset -1px 0 2px #6d61412b,1px 2px 3px #504a3429}.face:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#655c3822,transparent 9%,transparent 96%,#897c4610);box-shadow:inset 0 0 28px #c1a96e12}.back{transform:rotateY(180deg);border-radius:5px 1px 2px 6px}.back:after{background:linear-gradient(270deg,#655c3829,transparent 12%,transparent 97%,#897c4610)}.paper-grain{position:absolute;inset:0;pointer-events:none;opacity:.27;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E")}.art{width:100%;height:100%;object-fit:cover;display:block;mix-blend-mode:multiply}.cover .art{mix-blend-mode:normal}.cover{border:1px solid #acaa9170}.page-note{position:absolute;bottom:5%;left:11%;font:15px Notebook,'Segoe Print',cursive;color:#918978;transform:rotate(-3deg)}.folio{position:absolute;bottom:5%;right:9%;font:10px Georgia,serif;color:#a69c85}.verse{height:100%;display:flex;flex-direction:column;justify-content:center;padding:10% 13%;position:relative}.verse .eyebrow{font:8px system-ui,sans-serif;letter-spacing:2.5px;color:#a29987;margin-bottom:35px}.poem{font:clamp(20px,2.7vw,34px)/1.65 Notebook,'Segoe Print','Bradley Hand',cursive;white-space:pre-line;transform:rotate(-1.4deg);margin:0;color:#414338}.poem span{display:block}.poem span:nth-child(2){translate:3px 0}.seal{width:34px;height:37px;color:#ab4533;opacity:.8;transform:rotate(-7deg);margin-top:28px}.verse .annotation{font:16px Notebook,'Segoe Print',cursive;color:#9a927e;margin-top:17px;transform:rotate(-2deg)}.hit{position:absolute;top:0;width:50%;height:100%;border:0;background:transparent;z-index:200}.hit.prev{left:0}.hit.next{right:0}.hit:hover{background:linear-gradient(90deg,transparent,#8c795805)}.closed .hit.prev{visibility:hidden}.book.riffle .sheet{transition-duration:240ms}
+.controls{display:flex;align-items:center;justify-content:center;gap:22px;padding:12px 20px 0;position:relative}.arrow{border:1px solid #c9c7b8;background:transparent;border-radius:50%;width:38px;height:38px;font:18px Georgia}.arrow:hover:enabled{background:#e9e5d9}.counter{font:10px system-ui,sans-serif;letter-spacing:2px;min-width:100px;text-align:center;color:#7f8174}.dots{display:flex;justify-content:center;gap:12px;padding-top:20px}.dot{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:#cecec0;position:relative}.dot:before{content:"";position:absolute;inset:-8px}.dot[aria-current=true]{background:var(--red)}.hint{margin:25px 0 0;text-align:center;font:11px system-ui,sans-serif;letter-spacing:.5px;color:#97988a}.footer{display:flex;justify-content:space-between;margin:34px 5vw 24px;font:9px system-ui,sans-serif;letter-spacing:1.5px;color:#969789;text-transform:uppercase}.mobile-reading{display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:1500px){.poem{font-size:36px}}
+/* Tiny irregularities suggest a deckled edge without exaggerating the silhouette. */
+.face{clip-path:polygon(.15% .2%,18% 0,36% .18%,52% 0,73% .16%,99.8% 0,100% 16%,99.85% 32%,100% 55%,99.8% 76%,100% 99.75%,81% 100%,63% 99.8%,42% 100%,20% 99.85%,0 100%,.15% 78%,0 59%,.12% 37%,0 18%)}
+.cover{clip-path:none}
+.book-wrap{container-type:inline-size}.sheet .poem{font-size:clamp(17px,3.5cqi,34px)}
+/* After the final leaf turns, center the closed book on its left half. */
+.book.closed-end{translate:25% 0}.closed-end .foundation{left:0;right:50%;border-radius:6px 1px 1px 6px}.closed-end .hit.next{visibility:hidden}
+.back-cover-copy{position:absolute;top:28%;left:10%;width:80%;text-align:center;color:#41473e}.back-cover-name{font:clamp(22px,3.5cqi,36px)/1.25 Notebook,'Segoe Print',cursive;margin:0 0 22px;transform:rotate(-1deg)}.back-cover-bio{font:clamp(17px,2.6cqi,27px)/1.6 Notebook,'Segoe Print',cursive;margin:0}.back-cover-copy .seal{margin:26px auto 0;display:block}.mobile-back-cover{position:relative;width:82%;margin:44px auto 0;aspect-ratio:2/3;box-shadow:0 12px 30px #4c452522;container-type:inline-size}.mobile-back-cover .back-cover-name{font-size:clamp(23px,9cqi,34px)}.mobile-back-cover .back-cover-bio{font-size:clamp(19px,7cqi,26px)}
+@media(max-width:700px){.masthead{padding:22px 6vw;font-size:8px;letter-spacing:1.4px}.masthead>span{display:none}.scene,.controls,.dots,.hint{display:none}.mobile-reading{display:block;padding:24px 6vw}.mobile-title{text-align:center;font-size:36px;font-weight:400;letter-spacing:-1px;margin:0 0 28px}.mobile-cover{width:82%;display:block;margin:0 auto 44px;box-shadow:0 12px 30px #4c452522;border-radius:3px}.mobile-spread{background:var(--paper);margin:0 0 36px;box-shadow:0 5px 17px #4c452515;scroll-margin-top:20px}.mobile-spread img{width:100%;display:block;mix-blend-mode:multiply}.mobile-spread .verse{min-height:300px;padding:25px 12% 48px}.mobile-spread .poem{font-size:30px}.mobile-spread .eyebrow{margin-bottom:20px}.mobile-spread .folio{bottom:20px}.footer{font-size:8px;line-height:1.8;gap:24px}}
+@media(prefers-reduced-motion:reduce){.sheet,.book{transition:none!important}}
+@media(max-width:700px){.mobile-spread .poem{font-size:clamp(22px,6.6vw,30px)}}
+</style>
+</head>
+<body>
+<header class="masthead"><div class="brand"><span class="brand-mark" aria-hidden="true">✳</span> Dr. Akshat Shukla</div><span>Four poems · one small world</span></header>
+<main>
+<section class="scene" aria-label="Interactive haiku sketchbook">
+<h1 class="back-title">Haiku Sketchbook</h1>
+<div class="book-wrap"><div class="book closed" id="book"><div class="foundation"></div><button class="hit prev" aria-label="Previous spread" tabindex="-1"></button><button class="hit next" aria-label="Next spread" tabindex="-1"></button></div></div>
+</section>
+<nav class="controls" aria-label="Turn pages"><button class="arrow" id="prev" aria-label="Previous spread">←</button><span class="counter" id="counter">COVER</span><button class="arrow" id="next" aria-label="Next spread">→</button></nav>
+<nav class="dots" id="dots" aria-label="Choose a spread"></nav>
+<p class="hint">Click a page to wander · or use the arrow keys</p>
+<div class="sr-only" id="status" aria-live="polite" aria-atomic="true"></div>
+<section class="mobile-reading" id="mobile" aria-label="Haiku collection"></section>
+</main>
+<footer class="footer"><span>Sketches & verses</span><span>Pause a little. Notice a little.</span></footer>
+<script>
+'use strict';
+// ADD A SPREAD: append { title, lines: [three lines], note, alt, image }
+// to this array. Images may be data URLs or relative files in the editable source.
+const cover = '__COVER__';
+const backCover = '__BACK_COVER__';
+const author = 'Dr. Akshat Shukla';
+const authorBio = 'An Educator, Writer. AI Enthusiast';
+const poems = [
+ {title:'Poetry in motion',lines:['little butterfly','poetry in motion--','rhyming red roses'],note:'a little garden moment',alt:'A pale butterfly hovering over loose crimson watercolor roses.',image:'__ROSES__'},
+ {title:'Tasting the text',lines:['sunlight bright','on page 114 --','tasting the text'],note:'in a patch of sunlight',alt:'An open book on page 114 bathed in warm sunlight and leaf shadows.',image:'__SUNLIGHT__'},
+ {title:'Summer silence',lines:["hawk's flight",'breaking the summer silence','a rare sight'],note:'beneath the summer sky',alt:'A solitary hawk soaring above distant quiet summer hills.',image:'__HAWK__'},
+ {title:'An old hollow',lines:['tree trunk','an old hollow--','father shouting'],note:'an echo in the trees',alt:'A weathered tree trunk with a dark hollow and faint echoing pencil marks.',image:'__TREE__'}
+];
+// Decorative artist’s mark, inspired by a carved seal; no translation implied.
+const seal = `<svg class="seal" aria-hidden="true" viewBox="0 0 40 44"><path d="M4 3L36 4 35 40 3 39Z" fill="none" stroke="currentColor" stroke-width="2.4"/><g stroke="currentColor" stroke-width="2" fill="none"><path d="M10 10L10 31M7 18L17 17M7 26L16 25M23 10L31 11 30 20 22 19ZM21 25L31 33 20 33Z"/></g><path d="M3 15L5 17M35 28L37 30M14 40L17 38" stroke="var(--paper)" stroke-width="2"/></svg>`;
+function el(tag, cls, text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
+function closingCover(){const face=el('div','face back cover');const image=el('img','art');image.src=backCover;image.alt='Soft watercolor reeds and a quiet lake on the back cover';image.draggable=false;const copy=el('div','back-cover-copy');copy.append(el('h2','back-cover-name',author),el('p','back-cover-bio',authorBio));copy.insertAdjacentHTML('beforeend',seal);face.append(image,copy);return face;}
+function illustration(p,i){const face=el('div','face back');const img=el('img','art');img.src=p.image;img.alt=p.alt;img.draggable=false;face.append(img,el('span','page-note',p.note),el('span','folio',String(i*2+1).padStart(2,'0')));return face;}
+function verse(p,i){const face=el('div','face front');const v=el('div','verse');v.append(el('div','eyebrow',`MOMENT ${String(i+1).padStart(2,'0')}`));const poem=el('p','poem');p.lines.forEach(line=>poem.append(el('span','',line)));v.append(poem);v.insertAdjacentHTML('beforeend',seal);v.append(el('span','annotation',p.note));face.append(v,el('div','paper-grain'),el('span','folio',String(i*2+2).padStart(2,'0')));return face;}
+const book=document.getElementById('book'),sheets=[],dots=document.getElementById('dots'),mobile=document.getElementById('mobile');
+// A physical leaf has the current poem on its front and the next sketch on its back.
+for(let i=0;i<=poems.length;i++){
+ const sheet=el('div','sheet');sheet.setAttribute('aria-hidden','true');
+ if(i===0){const f=el('div','face front cover');const image=el('img','art');image.src=cover;image.alt=`Haiku Sketchbook by ${author} — watercolor mountains, lake and reeds`;f.append(image);sheet.append(f);}else sheet.append(verse(poems[i-1],i-1));
+ if(i<poems.length)sheet.append(illustration(poems[i],i));else sheet.append(closingCover());
+ book.append(sheet);sheets.push(sheet);
+}
+// Positions: front cover, each haiku, then the closed back cover.
+const lastPosition=poems.length+1;
+const buttons=[];for(let i=0;i<=lastPosition;i++){const b=el('button','dot');b.setAttribute('aria-label',i===0?'View cover':i===lastPosition?'View back cover':`View haiku ${i}: ${poems[i-1].title}`);b.addEventListener('click',()=>navigate(i));dots.append(b);buttons.push(b);}
+mobile.append(el('h1','mobile-title','Haiku Sketchbook'));const mc=el('img','mobile-cover');mc.src=cover;mc.alt='Haiku Sketchbook cover';mobile.append(mc);poems.forEach((p,i)=>{const article=el('article','mobile-spread');article.id=`moment-${i+1}`;const image=el('img');image.src=p.image;image.alt=p.alt;image.loading='lazy';article.append(image);const v=verse(p,i);v.className='mobile-verse';article.append(v);mobile.append(article);});
+const mobileBack=closingCover();mobileBack.className='mobile-back-cover';mobile.append(mobileBack);
+const prev=document.getElementById('prev'),next=document.getElementById('next'),counter=document.getElementById('counter'),status=document.getElementById('status');
+const reduced=matchMedia('(prefers-reduced-motion: reduce)'),desktop=matchMedia('(min-width:701px)');let current=0,riffleTimers=[],generation=0,userInteracted=false;
+function stopRiffle(){riffleTimers.forEach(clearTimeout);riffleTimers=[];book.classList.remove('riffle');}
+function navigate(target,automatic=false){
+ if(!automatic){userInteracted=true;stopRiffle();}const old=current;current=Math.max(0,Math.min(lastPosition,target));generation++;const epoch=generation;
+ sheets.forEach((s,i)=>{const turned=i<current;const moving=(i<old)!==turned;s.style.zIndex=moving?String(100+(current>old?i:-i)):String(turned?i+1:sheets.length-i);s.classList.toggle('turned',turned);});
+ book.classList.toggle('closed',current===0);book.classList.toggle('closed-end',current===lastPosition);prev.disabled=current===0;next.disabled=current===lastPosition;counter.textContent=current===0?'COVER':current===lastPosition?'BACK COVER':`${String(current).padStart(2,'0')} / ${String(poems.length).padStart(2,'0')}`;buttons.forEach((b,i)=>b.setAttribute('aria-current',String(i===current)));
+ const nextLabel=current===poems.length?'Close book':'Next spread';next.setAttribute('aria-label',nextLabel);book.querySelector('.next').setAttribute('aria-label',nextLabel);prev.setAttribute('aria-label',current===lastPosition?'Reopen book':'Previous spread');book.querySelector('.prev').setAttribute('aria-label',current===lastPosition?'Reopen book':'Previous spread');
+ status.textContent=current===0?`Cover: Haiku Sketchbook by ${author}`:current===lastPosition?`Book closed. ${author}. ${authorBio}`:`Haiku ${current} of ${poems.length}. ${poems[current-1].lines.join('. ')}`;
+ // Hide physical faces from assistive tech; the active poem is announced above.
+ setTimeout(()=>{if(epoch!==generation)return;sheets.forEach((s,i)=>s.style.zIndex=String(i<current?i+1:sheets.length-i));},book.classList.contains('riffle')?260:880);
+}
+prev.addEventListener('click',()=>navigate(current-1));next.addEventListener('click',()=>navigate(current+1));book.querySelector('.prev').addEventListener('click',()=>navigate(current-1));book.querySelector('.next').addEventListener('click',()=>navigate(current+1));
+document.addEventListener('keydown',e=>{if(!desktop.matches||e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();navigate(current+(e.key==='ArrowRight'?1:-1));}if(e.key==='Home'){e.preventDefault();navigate(0);}if(e.key==='End'){e.preventDefault();navigate(lastPosition);}});
+let touchX=null;book.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;},{passive:true});book.addEventListener('touchend',e=>{if(touchX===null)return;const distance=e.changedTouches[0].clientX-touchX;touchX=null;if(Math.abs(distance)>45){navigate(current+(distance<0?1:-1));suppressClick=true;setTimeout(()=>suppressClick=false,400);}},{passive:true});let suppressClick=false;book.addEventListener('click',e=>{if(suppressClick){e.stopImmediatePropagation();e.preventDefault();}},true);
+// Local files sometimes disallow sessionStorage. Gracefully fall back to no riffle.
+function start(){if(userInteracted)return;let first=false;try{first=desktop.matches&&!sessionStorage.getItem('haiku-riffled-v1');if(first)sessionStorage.setItem('haiku-riffled-v1','1');}catch{}navigate(1,true);if(first&&desktop.matches&&!reduced.matches){navigate(0,true);book.classList.add('riffle');[1,2,3,2,1].forEach((target,i)=>riffleTimers.push(setTimeout(()=>navigate(target,true),550+i*290)));riffleTimers.push(setTimeout(()=>stopRiffle(),2100));}}
+desktop.addEventListener('change',stopRiffle);reduced.addEventListener('change',stopRiffle);navigate(0,true);
+// Wait for image decoding to prevent a blank page during the opening flourish.
+Promise.all([...book.querySelectorAll('img')].map(img=>img.decode().catch(()=>{}))).then(start);
+</script>
+</body>
+</html>
