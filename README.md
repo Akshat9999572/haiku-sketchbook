@@ -10,7 +10,7 @@ Run `npx vercel --prod --project haiku-sketchbook` from this folder while signed
 
 Desktop: the book always starts on the front cover. Click the cover or next button to open haiku one. Click the left/right page, use the arrow buttons or arrow keys, or choose a dot. The next click after haiku four turns the final leaf and closes the book on its back cover. Click the closed back cover or the previous button to reopen it. Home opens the front cover; End closes on the back cover. Reverse direction during a flip to reverse its motion. Reduced-motion users skip animation.
 
-Mobile: start on the front cover, then view one illustrated haiku at a time with artwork above its verse. Swipe horizontally or use the large previous/next buttons; vertical gestures scroll normally. The last turn closes on the back cover. Short landscape screens place artwork beside the verse. Navigation stays within reach above the phone’s safe area.
+Mobile uses the same two-page CSS 3D book as desktop: illustration on the left, verse on the right, and physical page turns. Tap the left/right half, swipe horizontally or use the large navigation buttons. Vertical gestures scroll normally. The book starts on its front cover and the last turn closes it on the back cover. Portrait and landscape layouts fit the book to the screen; browser pinch zoom remains available.
 
 ## Edit
 
